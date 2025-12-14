@@ -5,8 +5,8 @@ class Solution:
         for i in range(len(nums)):
             current = i
             if count == 0:
-                candidate = nums[current]
-            if candidate ==nums[current]:
+                candidate = nums[i]
+            if candidate ==nums[i]:
                 count+=1
             else:
                 count-=1
