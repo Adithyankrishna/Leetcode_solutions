@@ -3,7 +3,6 @@ class Solution:
         count = 0
         candidate = 0
         for i in range(len(nums)):
-            current = i
             if count == 0:
                 candidate = nums[i]
             if candidate ==nums[i]:
