@@ -4,10 +4,10 @@ class Solution:
         candidate = 0
         for i in range(len(nums)):
             current = i
-            if count ==0:
+            if count == 0:
                 candidate = nums[current]
-            if candidate == nums[current]:
-                count +=1
+            if candidate ==nums[current]:
+                count+=1
             else:
                 count-=1
         return candidate
