@@ -1,17 +1,13 @@
-from collections import defaultdict
-from typing import List
-
 class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
-        anagram_map = defaultdict(list)
+        dict1 = {}
+        
+        for ch in strs:
+            sortword = "".join(sorted(ch))
+            if sortword in dict1:
+                dict1[sortword] += [ch]
+            else:
+                dict1[sortword] = [ch]
+        return list(dict1.values())
 
-        for word in strs:
-            count = [0] * 26  
-
-            for ch in word:
-                count[ord(ch) - ord('a')] += 1
-
-            key = tuple(count)
-            anagram_map[key].append(word)
-
-        return list(anagram_map.values())
+        
