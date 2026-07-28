@@ -1,26 +1,24 @@
 class Solution:
     def sortColors(self, nums: List[int]) -> None:
-        low = 0
-        mid = 0 
-        high = len(nums) -1
+       zero = one = two = 0
 
-        while mid <= high:
-            if nums[mid] == 0:
-                nums[low],nums[mid] = nums[mid],nums[low]
-                low+=1
-                mid+=1
-            elif nums[mid]==1:
-                mid+=1
-            else:
-                nums[high],nums[mid] = nums[mid],nums[high]
-                high-=1
-
-
-
-
-
-
-        """
-        Do not return anything, modify nums in-place instead.
-        """
-        
+       for num in nums:
+        if num == 0:
+            zero+=1
+        elif num==1:
+            one+=1
+        else:
+            two+=1
+       i=0
+       while zero > 0:
+            nums[i] =0
+            i+=1
+            zero-=1
+       while one > 0:
+            nums[i] = 1
+            i+=1
+            one-=1
+       while two > 0:
+            nums[i] = 2
+            i+=1
+            two-=1
